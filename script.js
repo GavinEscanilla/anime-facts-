@@ -1,22 +1,20 @@
-const searchinput = document.getElementById('search-input');
-const searchbtn = document.getElementById('searchbtn');
-const animefacts = "https://anime-facts-rest-api.herokuapp.com/api/v1";
-const  fetchData = async () => {
-    const err = 'Pokémon not found';
-    try {
-      const res = await fetch(animefacts);
-      const data = await res.json();
-      console.log('data');
-    
-    } catch (err) {
-       console.log(err);
-    }
-    
-  };
+//import axios from "axios";
+const input = document.getElementById("search-input");
+const search = document.getElementById("search-button");
+const img = document.getElementById('img');
+const animefacts = "Mzk3MTU0OTMyOTU4MTY3MDUx.MTcxNjM5ODA4OQ--.c395354176";
+
+const url = "https://waifu.it/api/v4/angry";
+const fetchData = async () => {
+  try {
+    const { data } = await axios.get(url, { headers: {
+        Authorization: "Mzk3MTU0OTMyOTU4MTY3MDUx.MTcxNjM5ODA4OQ--.c395354176",
+    } });
+    return data;
+} catch (err) {
+    throw new Error(err.message);
+}
+};
+search.addEventListener('click', () =>{
   fetchData();
-  console.log('hello world')
-  /*
-  searchbtn.addEventListener('click', () => {
-    fetchData(searchinput.value.toLowerCase().trim())
-  });*/
-  
+})
