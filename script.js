@@ -14,9 +14,7 @@ const fetchData = async () => {
             Authorization: "Mzk3MTU0OTMyOTU4MTY3MDUx.MTcxNjM5ODA4OQ--.c395354176",
         } });
         const data = await res.json();
-        const {url} = data;
-        console.log(url);
-        img.src="url";
+        img.src=data.url;
     } catch (err) {
         console.log(err);
     }
@@ -25,5 +23,4 @@ const fetchData = async () => {
  console.log(11+11);
  search.addEventListener('click',() =>{
     fetchData();
-    console.log(fetchData());
  })
