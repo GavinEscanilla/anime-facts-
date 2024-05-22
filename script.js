@@ -8,12 +8,13 @@ const  fetchData = async () => {
       const data = await res.json();
       console.log('data');
     
-    } catch () {
-       
+    } catch (err) {
+       console.log(err);
     }
     
   };
   fetchData();
+  console.log('hello world')
   /*
   searchbtn.addEventListener('click', () => {
     fetchData(searchinput.value.toLowerCase().trim())
